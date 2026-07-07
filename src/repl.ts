@@ -1,4 +1,5 @@
 import readline from "readline";
+import { getCommands } from "./commands.js";
 
 export function cleanInput(input: string): string[] {
   return input.trim().toLowerCase().split(/\s+/);
@@ -8,6 +9,8 @@ export function startREPL(
   input: NodeJS.ReadableStream,
   output: NodeJS.WritableStream,
 ) {
+  const commands = getCommands();
+
   const rl = readline.createInterface({
     input,
     output,
@@ -24,7 +27,17 @@ export function startREPL(
       return;
     }
 
-    console.log(`Your command was: ${words[0]}`);
+    const command = commands[words[0]];
+
+    if (command) {
+      try {
+        command.callback(commands);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      console.log("Unknown command");
+    }
 
     rl.prompt();
   });
