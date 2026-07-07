@@ -14,4 +14,10 @@
     "@types/node": "^26.1.0",
     "typescript": "^6.0.3"
   }
+  "type": "module",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/main.js",
+    "dev": "npx tsc && node dist/main.js"
+  },
 }
