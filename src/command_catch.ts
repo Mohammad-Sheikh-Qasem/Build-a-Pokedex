@@ -1,6 +1,5 @@
 import type { State } from "./state.js";
 
-
 export async function commandCatch(
   state: State,
   ...args: string[]
@@ -11,22 +10,17 @@ export async function commandCatch(
     return;
   }
 
-
   const pokemonName = args[0];
-
 
   console.log(
     `Throwing a Pokeball at ${pokemonName}...`
   );
 
-
   const pokemon =
     await state.pokeapi.fetchPokemon(pokemonName);
 
-
   const chance =
-    100 / pokemon.base_experience;
-
+    100 - pokemon.base_experience / 2;
 
   if (Math.random() * 100 < chance) {
 
