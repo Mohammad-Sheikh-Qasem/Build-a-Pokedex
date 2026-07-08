@@ -1,3 +1,4 @@
+import { commandCatch } from "./command_catch.js";
 import { commandExplore } from "./command_explore.js";
 import type { CLICommand } from "./state.js";
 import { commandExit } from "./command_exit.js";
@@ -34,6 +35,11 @@ export function getCommands(): Record<string, CLICommand> {
       name: "mapb",
       description: "Displays the previous 20 locations",
       callback: commandMapBack,
+    },
+   catch: {
+      name: "catch",
+      description: "Catch a Pokemon",
+      callback: commandCatch,
     },
   };
 }
