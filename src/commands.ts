@@ -1,3 +1,4 @@
+import { commandInspect } from "./command_inspect.js";
 import { commandCatch } from "./command_catch.js";
 import { commandExplore } from "./command_explore.js";
 import type { CLICommand } from "./state.js";
@@ -35,6 +36,11 @@ export function getCommands(): Record<string, CLICommand> {
       name: "mapb",
       description: "Displays the previous 20 locations",
       callback: commandMapBack,
+    },
+    inspect: {
+      name: "inspect",
+      description: "Inspect a caught Pokemon",
+      callback: commandInspect,
     },
    catch: {
       name: "catch",
