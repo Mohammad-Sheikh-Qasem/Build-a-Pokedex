@@ -2,6 +2,11 @@
 > pokedex@1.0.0 dev
 > npx tsc && node dist/main.js
 
-Pokedex > Your command was: CHARMANDER
-Pokedex > Your command was: Pikachu
-Pokedex > 
+src/commands.ts(10,14): error TS1005: ';' expected.
+src/commands.ts(11,11): error TS1005: ';' expected.
+src/commands.ts(12,1): error TS1109: Expression expected.
+src/commands.ts(12,2): error TS1128: Declaration or statement expected.
+src/commands.ts(16,14): error TS1005: ';' expected.
+src/commands.ts(17,11): error TS1005: ';' expected.
+src/commands.ts(18,1): error TS1109: Expression expected.
+src/commands.ts(18,2): error TS1128: Declaration or statement expected.
